@@ -1,4 +1,5 @@
 :root {
+    --lightDefaultBackground: rgb(255, 255, 255);
     --lightPrimaryFontColor: black;
     --lightSecondaryFontColor: rgb(36, 36, 36);
     --lightFontShadow: rgba(255, 255, 255, 1);
@@ -7,6 +8,7 @@
     --lightNavHighlight: royalblue;
     --lightBackgroundOverlay: rgba(255, 255, 255, 0.5);
 
+    --darkDefaultBackground: rgb(0, 0, 0);
     --darkPrimaryFontColor: white;
     --darkSecondaryFontColor: whitesmoke;
     --darkFontShadow: rgba(0, 0, 0, 1);
@@ -15,6 +17,7 @@
     --darkNavHighlight: dodgerblue;
     --darkBackgroundOverlay: rgba(0, 0, 0, 0.8);
 
+    --currentDefaultBackground: var(--lightDefaultBackground);
     --currentPrimaryFontColor: var(--lightPrimaryFontColor);
     --currentSecondaryFontColor: var(--lightSecondaryFontColor);
     --currentFontShadow: var(--lightFontShadow);
@@ -24,6 +27,7 @@
     --currentBackgroundOverlay: var(--lightBackgroundOverlay);
 
     font-family: monospace;
+    background: var(--currentDefaultBackground);
 }
 
 #app {
@@ -39,6 +43,7 @@
     overscroll-behavior-x: contain;
     transition: all 0.5s ease-in-out;
 }
+
 #app>div {
     position: relative;
     height: 100%;
@@ -85,6 +90,7 @@ nav>div:hover {
 #intro {
     text-align: center;
 }
+
 #intro>div {
     display: flex;
     flex-direction: column;
@@ -128,8 +134,9 @@ nav>div:hover {
     width: 100%;
     height: 100%;
 }
+
 #about>div {
-    width: 30%;
+    width: 40%;
     margin-bottom: 5vh;
 }
 
@@ -139,19 +146,21 @@ nav>div:hover {
     justify-content: center;
     align-items: center;
 }
+
 #skills>div {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin:1vh;
+    margin: 1vh;
     background: var(--currentBackgroundOverlay);
     border-top: 1px solid var(--currentBorderColor);
     border-bottom: 1px solid var(--currentBorderColor);
     border-radius: 5px;
 }
-#skills>div>h5{
+
+#skills>div>h5 {
     font-size: 3vh;
     margin: 0;
     padding: 0;
@@ -160,7 +169,8 @@ nav>div:hover {
     text-shadow: var(--currentFontShadow) 0 0 2vh;
     font-weight: bold;
 }
-#skills>div>div{
+
+#skills>div>div {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -172,14 +182,16 @@ nav>div:hover {
 #aboutText {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     text-wrap: wrap;
-    padding:10px;
+    max-height: 80%;
+    overflow: scroll;
+    padding: 10px;
     background: var(--currentBackgroundOverlay);
     border-left: 1px solid var(--currentBorderColor);
     border-right: 1px solid var(--currentBorderColor);
-    
+
 }
 
 #aboutText>p {
@@ -207,6 +219,7 @@ nav>div:hover {
     width: 5vh;
     height: 5vh;
 }
+
 .skillCard>img>svg {
     color: var(--currentPrimaryFontColor);
 }
@@ -227,7 +240,7 @@ nav>div:hover {
 }
 
 
-.project{
+.project {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -248,7 +261,7 @@ nav>div:hover {
     align-items: center;
     width: 100%;
     height: 100%;
-    margin-top:10vh;
+    margin-top: 10vh;
     margin-bottom: 5vh;
     background: var(--currentBackgroundOverlay);
 }
@@ -291,7 +304,7 @@ nav>div:hover {
 .projectDescription>p {
     margin: 0;
     padding: 0;
-    width:100%;
+    width: 100%;
     margin-bottom: 10px;
     text-align: left;
     font-weight: normal;
@@ -340,7 +353,8 @@ nav>div:hover {
     width: 100%;
     height: 100%;
 }
-#contact>div{
+
+#contact>div {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -350,14 +364,16 @@ nav>div:hover {
     margin-top: 10vh;
     margin-bottom: 5vh;
 }
-#contact>div>h1{
+
+#contact>div>h1 {
     font-size: 7vh;
     margin: 0;
     padding: 0;
     text-shadow: var(--currentFontShadow) 0 0 2vh;
     font-weight: bold;
 }
-#contact>div>span{
+
+#contact>div>span {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -365,7 +381,8 @@ nav>div:hover {
     width: 100%;
     height: 10vh;
 }
-#contacts{
+
+#contacts {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -373,7 +390,7 @@ nav>div:hover {
     width: 100%;
 }
 
-#contacts>a{
+#contacts>a {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -385,6 +402,99 @@ nav>div:hover {
     margin: 5px;
     cursor: pointer;
 }
-#contacts>a:hover{
+
+#contacts>a:hover {
     text-decoration: underline;
+}
+
+@media screen and (max-width: 600px) {
+    nav>div {
+        font-size: 3vw;
+    }
+
+    #intro>div>h1 {
+        font-size: 8vw;
+    }
+
+    #intro>div>p {
+        font-size: 3vw;
+    }
+
+    #about>div>h1 {
+        font-size: 6vw;
+    }
+
+    #skills>div>h5 {
+        font-size: 4vw;
+    }
+
+    .skillCard {
+        width: 10vw;
+    }
+
+    .skillCard>img {
+        width: 5vw;
+        height: 5vw;
+    }
+
+    .skillCard>svg {
+        width: 5vw;
+        height: 5vw;
+    }
+
+    .skillCard>p {
+        font-size: 3vw;
+    }
+
+    #aboutText>p {
+        font-size: 3vw;
+    }
+
+    .project>div {
+        height: 90vh;
+    }
+
+    .project>div>div {
+        height: 100%;
+        flex-direction: column;
+        overflow: scroll;
+    }
+
+    .project>div>div>div {
+        width: 100%;
+        height: 45%;
+    }
+
+    .projectName {
+        font-size: 6vw;
+        margin: 1vh;
+    }
+
+    .projectImage>img {
+        height: 100%;
+    }
+
+    .projectDescription {
+        height: 80%;
+        border-top: 1px solid var(--currentBorderColor);
+        border-bottom: 1px solid var(--currentBorderColor);
+        border-left: 0;
+        border-right: 0;
+    }
+
+    .projectDescription>p {
+        font-size: 3vw;
+    }
+
+    .projectLinks>a {
+        font-size: 3vw;
+    }
+
+    #contact>div>h1 {
+        font-size: 8vw;
+    }
+
+    #contacts>a {
+        font-size: 8vw;
+    }
 }

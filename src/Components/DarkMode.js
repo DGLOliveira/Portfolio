@@ -4,7 +4,9 @@ import { FaMoon, FaSun } from "react-icons/fa";
 
 export default function DarkMode() {
     const context = useContext(Context);
+    //list of current theme style variables
     const currentThemeVar = [
+        "--currentDefaultBackground",
         "--currentPrimaryFontColor",
         "--currentSecondaryFontColor",
         "--currentFontShadow",
@@ -13,7 +15,9 @@ export default function DarkMode() {
         "--currentNavHighlight",
         "--currentBackgroundOverlay"
     ]
+    // gets list of dark theme style constants
     const darkTheme = [
+        getComputedStyle(root).getPropertyValue("--darkDefaultBackground"),
         getComputedStyle(root).getPropertyValue("--darkPrimaryFontColor"),
         getComputedStyle(root).getPropertyValue("--darkSecondaryFontColor"),
         getComputedStyle(root).getPropertyValue("--darkFontShadow"),
@@ -22,7 +26,10 @@ export default function DarkMode() {
         getComputedStyle(root).getPropertyValue("--darkNavHighlight"),
         getComputedStyle(root).getPropertyValue("--darkBackgroundOverlay")
     ];
+
+    // gets list of light theme style constants
     const lightTheme = [
+        getComputedStyle(root).getPropertyValue("--lightDefaultBackground"),
         getComputedStyle(root).getPropertyValue("--lightPrimaryFontColor"),
         getComputedStyle(root).getPropertyValue("--lightSecondaryFontColor"),
         getComputedStyle(root).getPropertyValue("--lightFontShadow"),
@@ -44,7 +51,7 @@ export default function DarkMode() {
         event.matches ? context.setDarkMode(true) : context.setDarkMode(false);
     });
 
-    //Updates color scheme
+    //Updates color scheme on dark mode change
     useEffect(() => {
         if (context.darkMode) {
             currentThemeVar.forEach((value, index) => document.querySelector(":root").style.setProperty(value, darkTheme[index]));

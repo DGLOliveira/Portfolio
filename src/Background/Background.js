@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext, Suspense } from "react";
 import { Context } from "../Context/Context.js";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Stars} from "@react-three/drei";
+import { OrbitControls, Stars } from "@react-three/drei";
 import Ocean from "./Ocean.js";
 import SkyBox from "./Sky.js";
 
@@ -31,24 +31,24 @@ export default function Background() {
 
     return (
         <div id="background">
-            <Canvas
-                gl={{ antialias: false }}
-                dpr={window.devicePixelRatio}
-                camera={{ position: [0, 25, 10], near: 2 }}
-            >
-                <OrbitControls target={[0, 25, 0]} />
-                <fog
-                    attach="fog"
-                    color={state.fog.color}
-                />
-                <SkyBox />
-                <Stars
-                    radius={440}
-                />
-                <Suspense fallback={null}>
+            <Suspense fallback={null}>
+                <Canvas
+                    gl={{ antialias: false }}
+                    dpr={window.devicePixelRatio}
+                    camera={{ position: [0, 25, 10], near: 2 }}
+                >
+                    <OrbitControls target={[0, 25, 0]} />
+                    <fog
+                        attach="fog"
+                        color={state.fog.color}
+                    />
+                    <SkyBox />
+                    <Stars
+                        radius={440}
+                    />
                     <Ocean />
-                </Suspense>
-            </Canvas>
+                </Canvas>
+            </Suspense>
         </div>
     );
 };
