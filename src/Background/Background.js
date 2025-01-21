@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext, Suspense } from "react";
 import { Context } from "../Context/Context.js";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Stars } from "@react-three/drei";
+import { OrbitControls, Stars, Sky } from "@react-three/drei";
 import Ocean from "./Ocean.js";
 import SkyBox from "./Sky.js";
 
@@ -29,6 +29,7 @@ export default function Background() {
         }
     }, [context.darkMode]);
 
+
     return (
         <div id="background">
             <Suspense fallback={null}>
@@ -42,7 +43,15 @@ export default function Background() {
                         attach="fog"
                         color={state.fog.color}
                     />
+                    <Suspense fallback={
+                        <Sky 
+                            inclination={context.darkMode ? 0.44 : 0.75}
+                            azimuth={0.25}
+                            rayleigh={context.darkMode ? 50 : 0.05}
+                        />
+                    }>
                     <SkyBox />
+                    </Suspense>
                     <Stars
                         radius={440}
                     />
