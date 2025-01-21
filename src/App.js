@@ -9,22 +9,18 @@ import "./style.css";
 
 export default function App() {
     const context = useContext(Context);
-    
-    const navList = {
-        "intro": {"title":"Home", "targetID": "intro" },
-        "about": {"title":"About me", "targetID": "about" },
-        "projects": {"title":"Projects", "targetID": "project0"},
-        "contact": {"title":"Get in touch", "targetID": "contact"}
-    };
 
+    //Gets allowed maximum scroll height
     useEffect(() => {
-        context.setScrollTopMax(document.getElementById("app").scrollTopMax);
+        //do not use scrollTopMax, as this paramenter is implemented in Firefox, but not in Chrome or Safari
+        //instead calculate value as scrollHeight - clientHeight
+        context.setScrollTopMax(document.getElementById("app").scrollHeight-document.getElementById("app").clientHeight);
     }, [window.innerHeight]);
 
+    //Gets scroll position and current section in view, to update nav highlight and background sun position
     const scrollHandler = (y) => {
         context.setScrollTop(y);
         let middleDiv = document.elementFromPoint(0, window.innerHeight/2);
-        console.log(middleDiv);
         if(middleDiv.id === "intro") {
             context.setScrollView("intro");
         }

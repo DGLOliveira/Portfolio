@@ -43,15 +43,7 @@ export default function Background() {
                         attach="fog"
                         color={state.fog.color}
                     />
-                    <Suspense fallback={
-                        <Sky 
-                            inclination={context.darkMode ? 0.44 : 0.75}
-                            azimuth={0.25}
-                            rayleigh={context.darkMode ? 50 : 0.05}
-                        />
-                    }>
                     <SkyBox />
-                    </Suspense>
                     <Stars
                         radius={440}
                     />
