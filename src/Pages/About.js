@@ -1,5 +1,5 @@
-import {useContext} from "react";
-import {Context} from "./../Context/Context.js";
+import { useContext } from "react";
+import { Context } from "./../Context/Context.js";
 import HTML from "./../Assets/HTML5.svg";
 import CSS from "./../Assets/CSS3.svg";
 import JS from "./../Assets/JS.svg";
@@ -30,10 +30,15 @@ export default function About() {
     ];
     const tools = [
         ["VSCode", VSCode, "VS Code"],
-        ["GitHub", FaGithub , "GitHub"],
+        ["GitHub", FaGithub, "GitHub"],
         ["Unity", FaUnity, "Unity"],
         ["Blender", Blender, "Blender"],
         ["Cura", Cura, "Cura"]
+    ];
+
+    const aboutText = ["I’m a passionate, self taught, web developer with a focus in front-end and 3D technologies.",
+        "I've started this journey in order to solve my own personal problems and desires, and eventually grew to love coding as more than just a tool or formula, but as an art form. I'm excited by the challenge of tackling complex problems and creating unique and versatile solutions, with a touch of style.",
+        "I'm currently looking for work as a web developer, and I'm open to remote work."
     ];
 
 
@@ -46,7 +51,7 @@ export default function About() {
                     <div>
                         {languages.map((language) => (
                             <div key={language[0]} className="skillCard">
-                                <img src={language[1]}/>
+                                <img src={language[1]} />
                                 <p>{language[2]}</p>
                             </div>
                         ))}
@@ -57,8 +62,8 @@ export default function About() {
                     <div>
                         {frameworks.map((framework) => (
                             <div key={framework[0]} className="skillCard">
-                                {framework[0] === "ThreeJS" ? <SiThreedotjs style={{color: "var(--currentPrimaryFontColor)", fontSize: "5vh"}}/> :
-                                <img src={framework[1]}/>}
+                                {framework[0] === "ThreeJS" ? <SiThreedotjs style={{ color: "var(--currentPrimaryFontColor)", fontSize: "5vh" }} /> :
+                                    <img src={framework[1]} />}
                                 <p>{framework[2]}</p>
                             </div>
                         ))}
@@ -69,9 +74,9 @@ export default function About() {
                     <div>
                         {tools.map((tool) => (
                             <div key={tool[0]} className="skillCard">
-                                {tool[0] === "Unity" ? <FaUnity style={{color: "var(--currentPrimaryFontColor)", fontSize: "5vh"}}/> :
-                                tool[0] === "GitHub" ? <FaGithub style={{color: "var(--currentPrimaryFontColor)", fontSize: "5vh"}}/> :
-                                <img src={tool[1]}/> }
+                                {tool[0] === "Unity" ? <FaUnity style={{ color: "var(--currentPrimaryFontColor)", fontSize: "5vh" }} /> :
+                                    tool[0] === "GitHub" ? <FaGithub style={{ color: "var(--currentPrimaryFontColor)", fontSize: "5vh" }} /> :
+                                        <img src={tool[1]} />}
                                 <p>{tool[2]}</p>
                             </div>
                         ))}
@@ -79,7 +84,7 @@ export default function About() {
                 </div>
             </div>
             <div id="aboutText">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget lobortis ante. Quisque dapibus erat nec sagittis tempor. Sed ex felis, condimentum et lacus sit amet, iaculis volutpat arcu. Nam vel fermentum elit. Quisque condimentum magna nec mollis congue. Fusce maximus, nisl ac venenatis vestibulum, metus lacus rutrum felis, ac vehicula mauris odio at leo. Suspendisse ac accumsan eros. Nam et sollicitudin mauris. Proin eget dolor leo. </p>
+                {aboutText.map((text, index) => (<p key={index}>{text}</p>))}
             </div>
         </div>
     );

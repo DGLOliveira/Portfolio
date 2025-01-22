@@ -133,8 +133,8 @@ nav>div:hover {
     margin: 0;
     padding: 1vh;
     font-weight: normal;
-    border-top: var(--defaultBorder);
-    border-bottom: var(--defaultBorder);
+    border-left: var(--defaultBorder);
+    border-right: var(--defaultBorder);
     border-radius: var(--defaultBorderRadius);
     background: var(--currentBackgroundOverlay);
 }
@@ -212,8 +212,12 @@ nav>div:hover {
 }
 
 #aboutText>p {
-    margin: 0;
+    margin:0;
     padding: 0;
+    margin-left: 1.5vh;
+    margin-right: 1.5vh;
+    padding-top: 1.5vh;
+    padding-bottom: 1.5vh;
     font-size: 3vh;
     text-align: start;
     text-wrap: wrap;
@@ -256,11 +260,6 @@ nav>div:hover {
     transition: var(--themeTransition);
 }
 
-.skillCard:hover>p {
-    text-decoration: underline;
-}
-
-
 .project {
     display: flex;
     flex-direction: column;
@@ -302,8 +301,17 @@ nav>div:hover {
     width: 40%;
 }
 
+.projectImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: var(--defaultBorder);
+    border-right: var(--defaultBorder);
+    border-radius: var(--defaultBorderRadius);
+}
+
 .projectImage>img {
-    width: 100%;
+    width: 98%;
     height: 50vh;
     border: none;
     border-color: transparent;
@@ -472,6 +480,10 @@ nav>div:hover {
     }
 
     #aboutText>p {
+        margin-left: 1.5vw;
+        margin-right: 1.5vw;
+        padding-top: 1.5vw;
+        padding-bottom: 1.5vw;
         font-size: 3vw;
     }
 
@@ -493,6 +505,14 @@ nav>div:hover {
     .projectName {
         font-size: 6vw;
         margin: 1vh;
+    }
+
+    .projectImage {
+        max-width: 96%;
+        border-left: none;
+        border-right: none;
+        border-top: var(--defaultBorder);
+        border-bottom: var(--defaultBorder);
     }
 
     .projectImage>img {
