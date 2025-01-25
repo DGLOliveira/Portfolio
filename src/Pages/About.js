@@ -7,7 +7,7 @@ import CHash from "./../Assets/CHash.svg";
 import React from "./../Assets/React.svg";
 import VSCode from "./../Assets/VSCode.svg";
 import { FaGithub } from "react-icons/fa";
-//import Figma from "./../Assets/Figma.svg";
+import Figma from "./../Assets/Figma.svg";
 //import ThreeJS from "./../Assets/ThreeJS.svg";
 import { SiThreedotjs } from "react-icons/si";
 import { FaUnity } from "react-icons/fa6";
@@ -31,6 +31,7 @@ export default function About() {
     const tools = [
         ["VSCode", VSCode, "VS Code"],
         ["GitHub", FaGithub, "GitHub"],
+        ["Figma", Figma, "Figma"],
         ["Unity", FaUnity, "Unity"],
         ["Blender", Blender, "Blender"],
         ["Cura", Cura, "Cura"]
