@@ -21,8 +21,7 @@ export default function About() {
     const languages = [
         ["HTML", HTML, "HTML 5"],
         ["CSS", CSS, "CSS 3"],
-        ["JS", JS, "Javascript"],
-        ["C#", CHash, "C#"]
+        ["JS", JS, "Javascript"]
     ];
     const frameworks = [
         ["React", React, "React"],
