@@ -3,6 +3,7 @@ import { Context } from "./../Context/Context.js";
 import HTML from "./../Assets/HTML5.svg";
 import CSS from "./../Assets/CSS3.svg";
 import JS from "./../Assets/JS.svg";
+import TS from "./../Assets/TS.svg";
 import CHash from "./../Assets/CHash.svg";
 import React from "./../Assets/React.svg";
 import VSCode from "./../Assets/VSCode.svg";
@@ -21,7 +22,8 @@ export default function About() {
     const languages = [
         ["HTML", HTML, "HTML 5"],
         ["CSS", CSS, "CSS 3"],
-        ["JS", JS, "Javascript"]
+        ["JS", JS, "Javascript"],
+        ["TS", TS, "Typescript"]
     ];
     const frameworks = [
         ["React", React, "React"],
