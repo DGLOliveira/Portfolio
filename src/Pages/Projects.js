@@ -4,7 +4,7 @@ export default function Projects() {
 
     const VIRTUAL_DESKTOP = {
         name: "Virtual Desktop",
-        image: "https://github.com/DGLOliveira/Virtual-Desktop/blob/main/docs/start_screen.jpg?raw=true",
+        image: "https://raw.githubusercontent.com/DGLOliveira/Virtual-Desktop/refs/heads/main/docs/Virtual_Desktop_Portfolio_Preview.png",
         description: [
             "A web app that replicates the GUI of a typical Operating System.",
             "This project was inspired by the old promises of the 2000s and 2010s, with the idea of creating a GUI that is both functional and highly customizable, and presenting a variety of styles and features, such as animated backgrounds, dynamic windows and taskbar widgets.",

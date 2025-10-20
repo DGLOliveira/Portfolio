@@ -242,7 +242,6 @@ nav>div:hover {
     width: 10vh;
     padding: 0.5vh;
     margin: 0.5vh;
-    cursor: pointer;
     transition: var(--themeTransition);
 }
 
