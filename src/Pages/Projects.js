@@ -28,9 +28,23 @@ export default function Projects() {
         link: "https://dgloliveira.github.io/3D-Print-Shop/",
     }
 
+    const SHOE_EDITOR = {
+        name: "Shoe Editor",
+        image: "https://raw.githubusercontent.com/DGLOliveira/Shoe-Editor/refs/heads/main/docs/Shoe_Editor_Portfolio_Preview.png",
+        description: [
+            "A web app that allows users to personalize and share 3D models of premade shoes.",
+            "This project is a proof of concept created to explore and demonstrate the capabilities of browser 3D rendering and user interaction, utilizing a customizable premade product.",
+            "This webapp is a strictly front end project, utilizing react, three.js and several libraries that merge the previous two.",
+            "All models are based on real life counterparts, and were personally modeled in Blender."
+        ],
+        github: "https://github.com/DGLOliveira/Shoe-Editor",
+        link: "https://dgloliveira.github.io/Shoe-Editor/",
+    }
+
     const projects = [
         VIRTUAL_DESKTOP,
         THREE_PRINT_SHOP,
+        SHOE_EDITOR
     ]
 
     return (
