@@ -6,8 +6,8 @@ export default function Intro() {
     const [welcomeOpacity, setWelcomeOpacity] = useState(0)
     const INTRO = "My name is Davide, I'm an aspiring, self-taught web developer."
 
+    //Fades in Welcome text
     useEffect(() => {
-        console.log(welcomeOpacity)
         if (introIndex === -1) {
             if (welcomeOpacity < 1) {
                 setTimeout(() => {
@@ -21,8 +21,8 @@ export default function Intro() {
         }
     }, [welcomeOpacity])
 
+    //Types out intro Text
     useEffect(() => {
-        console.log(introIndex)
         if (introIndex > -1 && introIndex < INTRO.length) {
             const interval = setInterval(() => {
                 setIntroText(INTRO.substring(0, introIndex + 1))
