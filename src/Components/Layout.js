@@ -3,7 +3,7 @@ import { Context } from "./../Context/Context.js";
 import DarkMode from "./DarkMode.js";
 import { FaAngleDoubleUp, FaAngleDoubleDown } from "react-icons/fa";
 
-export default function Nav() {
+export default function Layout() {
     const context = useContext(Context);
     const navList = {
         "intro": "Home",

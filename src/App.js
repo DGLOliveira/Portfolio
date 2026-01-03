@@ -1,6 +1,6 @@
-import { useState, useEffect, useContext } from "react";
+import { useEffect, useContext } from "react";
 import { Context } from "./Context/Context.js";
-import Nav from "./Components/Nav.js";
+import Layout from "./Components/Layout.js";
 import Intro from "./Pages/Intro.js";
 import About from "./Pages/About.js";
 import Projects from "./Pages/Projects.js";
@@ -36,7 +36,7 @@ export default function App() {
                 id="app"
                 onScroll={(e) => { scrollHandler(e.target.scrollTop); }}
             >
-                <Nav />
+                <Layout />
                 <Intro />
                 <About />
                 <Projects />
