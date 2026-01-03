@@ -83,7 +83,7 @@ html, body {
 }
 
 nav {
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -104,6 +104,40 @@ nav>div {
 
 nav>div:hover {
     text-decoration: underline;
+}
+
+.scrollButton {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%) scaleX(1.5) scaleY(1);
+    width: 4.5vh;
+    height: 4.5vh;
+    font-size: 3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--currentPrimaryFontColor);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    z-index: 2;
+}
+
+.scrollButton:hover{
+    transform: translateX(-50%) scaleX(2.25) scaleY(1.5);
+}
+
+.scrollButton:active{
+    transform: translateX(-50%) scaleX(1.5) scaleY(1);
+}
+
+#scrollUp {
+    top: 5.2vh;
+}
+
+#scrollDown {
+    top: 95vh;
 }
 
 

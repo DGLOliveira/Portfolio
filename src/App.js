@@ -21,18 +21,12 @@ export default function App() {
     const scrollHandler = (y) => {
         context.setScrollTop(y);
         let middleDiv = document.elementFromPoint(0, window.innerHeight/2);
-        if(middleDiv.id === "intro") {
-            context.setScrollView("intro");
-        }
-        else if(middleDiv.id === "about") {
-            context.setScrollView("about");
-        }
-        else if(middleDiv.id === "contact") {
-            context.setScrollView("contact");
-        }
-        else{
-            context.setScrollView("project0");
-        }
+        console.log(middleDiv.id)
+        context.scrollList.forEach((item)=>{
+            if(middleDiv.id === item && middleDiv.id !== context.scrollView)
+                context.setScrollView(item)
+        })
+        console.log(context.scrollView)
     };
 
     return (

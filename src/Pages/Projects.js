@@ -1,4 +1,6 @@
 import { FaGithub, FaLink, FaFilePdf } from "react-icons/fa";
+import { useContext, useEffect } from "react";
+import { Context } from "./../Context/Context.js";
 
 export default function Projects() {
 
@@ -46,6 +48,22 @@ export default function Projects() {
         THREE_PRINT_SHOP,
         SHOE_EDITOR
     ]
+
+    const context = useContext(Context);
+
+    //Creates a list for scroll navigation
+    // done in such a way that projects can added/removed without needing to change the list
+    useEffect(() => {
+        let scrollList = [
+            "intro",
+            "about"
+        ];
+        for (let i = 0; i < projects.length; i++) {
+            scrollList.push("project" + i);
+        }
+        scrollList.push("contact");
+        context.setScrollList(scrollList);
+    }, [])
 
     return (
         <>

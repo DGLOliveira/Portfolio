@@ -9,7 +9,8 @@ export const Context = createContext({
     setScrollTop: () => {},
     scrollTopMax: 0,
     setScrollTopMax: () => {},
-
+    scrollList: [],
+    setScrollList: () => {}
 });
 
 export default function ContextProvider({children}) {
@@ -17,6 +18,7 @@ export default function ContextProvider({children}) {
     const [scrollView, setScrollView] = useState("intro");
     const [scrollTop, setScrollTop] = useState(0);
     const [scrollTopMax, setScrollTopMax] = useState(0);
+    const [scrollList, setScrollList] = useState([]);
 
 
     const contextValue = {
@@ -27,7 +29,9 @@ export default function ContextProvider({children}) {
         scrollTop,
         setScrollTop,
         scrollTopMax,
-        setScrollTopMax
+        setScrollTopMax,
+        scrollList,
+        setScrollList
     };
 
     return (
