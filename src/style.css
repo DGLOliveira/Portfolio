@@ -129,6 +129,8 @@ nav>div:hover {
     padding: 0;
     text-shadow: var(--currentFontShadow) 0 0 2vh;
     font-weight: bold;
+    transform: opacity 1s ease-in-out;
+    transition: var(--themeTransition);
 }
 
 #intro>div>span {
