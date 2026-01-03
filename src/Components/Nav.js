@@ -11,6 +11,16 @@ export default function Nav() {
         "project0": "Projects",
         "contact": "Get in touch"
     }
+    const [highlightNav, setHighlightNav] = useState("intro");
+
+    useEffect(()=>{
+        if(navList[context.scrollView]){
+            setHighlightNav(context.scrollView)
+        }else{
+            //Accounts for all other project pages besides the first one
+            setHighlightNav("project0")
+        }
+    },[context])
 
     const handleScrollButton = (direction) =>{
         let currIndex = 0;
@@ -34,7 +44,7 @@ export default function Nav() {
                 {Object.keys(navList).map((key) => (
                     <div
                         key={key}
-                        style={context.scrollView === key ? { color: "var(--currentNavHighlight)" } : {}}
+                        style={highlightNav === key ? { color: "var(--currentNavHighlight)" } : {}}
                         onClick={() => { document.getElementById(key).scrollIntoView({ behavior: "smooth" }) }}
                     >{navList[key]}
                     </div>
