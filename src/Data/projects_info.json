@@ -1,7 +1,63 @@
 {
     "VIRTUAL_DESKTOP": {
         "name": "Virtual Desktop",
-        "image": "https://raw.githubusercontent.com/DGLOliveira/Virtual-Desktop/refs/heads/main/docs/Virtual_Desktop_Portfolio_Preview.png",
+        "slides": [
+            {
+                "url": "https://raw.githubusercontent.com/DGLOliveira/Virtual-Desktop/refs/heads/main/docs/Virtual_Desktop_Portfolio_Preview.png",
+                "title": "Preview",
+                "type": "image"
+            },
+            {
+                "url": "https://raw.githubusercontent.com/DGLOliveira/Virtual-Desktop/refs/heads/main/docs/PC_Themes_Dark.png",
+                "title": "PC Dark Theme",
+                "type": "image"
+            },
+            {
+                "url": "https://raw.githubusercontent.com/DGLOliveira/Virtual-Desktop/refs/heads/main/docs/PC_Themes_Light.png",
+                "title": "PC Light Theme",
+                "type": "image"
+            },
+            {
+                "url": "https://raw.githubusercontent.com/DGLOliveira/Virtual-Desktop/refs/heads/main/docs/Mobile_Themes_Dark.png",
+                "title": "Mobile Dark Theme",
+                "type": "image"
+            },
+            {
+                "url": "https://raw.githubusercontent.com/DGLOliveira/Virtual-Desktop/refs/heads/main/docs/Mobile_Themes_Light.png",
+                "title": "Mobile Light Theme",
+                "type": "image"
+            },
+            {
+                "url": "https://raw.githubusercontent.com/DGLOliveira/Virtual-Desktop/refs/heads/main/docs/Customized_UI.png",
+                "title": "Customized UI",
+                "type": "image"
+            },
+            {
+                "url": "https://raw.githubusercontent.com/DGLOliveira/Virtual-Desktop/refs/heads/main/docs/Customized_3DBackground.png",
+                "title": "Customized 3D Background",
+                "type": "image"
+            },
+            {
+                "url": "https://raw.githubusercontent.com/DGLOliveira/Virtual-Desktop/refs/heads/main/docs/drawdoc_Seven_Star.jpg",
+                "title": "Drawing microapp",
+                "type": "image"
+            },
+            {
+                "url": "https://raw.githubusercontent.com/DGLOliveira/Virtual-Desktop/refs/heads/main/docs/calculator_graphic.png",
+                "title": "Calculator microapp",
+                "type": "image"
+            },
+            {
+                "url": "https://raw.githubusercontent.com/DGLOliveira/Virtual-Desktop/refs/heads/main/docs/Arcade_SpaceInvaders.png",
+                "title": "Arcade Games microapp",
+                "type": "image"
+            },
+            {
+                "url": "https://raw.githubusercontent.com/DGLOliveira/Virtual-Desktop/refs/heads/main/docs/weather_summary.png",
+                "title": "Weather microapp",
+                "type": "image"
+            }
+        ],
         "description": [
             "A web app that replicates the GUI of a typical Operating System.",
             "This project was inspired by the old promises of the 2000s and 2010s, with the idea of creating a GUI that is both functional and highly customizable, and presenting a variety of styles and features, such as animated backgrounds, dynamic windows and taskbar widgets.",
@@ -13,7 +69,13 @@
     },
     "THREE_PRINT_SHOP": {
         "name": "3D Print Shop",
-        "image": "https://raw.githubusercontent.com/DGLOliveira/3D-Print-Shop/refs/heads/main/docs/Home_Light.jpg",
+        "slides": [
+            {
+                "url": "https://raw.githubusercontent.com/DGLOliveira/3D-Print-Shop/refs/heads/main/docs/Home_Light.jpg",
+                "title": "Home Page Light Theme",
+                "type": "image"
+            }
+        ],
         "description": [
             "A E-Commerce Website for a fake 3D Print Shop.",
             "The project is inspired by my passion for 3D printing and the idea of creating a platform where people can buy 3D models. It follows a standard E-Commerce website structure, with a unique design meant to be both functional and aesthetically pleasing, utilizing a minimalistic approach with a touch of modern style, and is limited to neutral colours.",
@@ -25,7 +87,13 @@
     },
     "SHOE_EDITOR": {
         "name": "Shoe Editor",
-        "image": "https://raw.githubusercontent.com/DGLOliveira/Shoe-Editor/refs/heads/main/docs/Shoe_Editor_Portfolio_Preview.png",
+        "slides": [
+            {
+                "url": "https://raw.githubusercontent.com/DGLOliveira/Shoe-Editor/refs/heads/main/docs/Shoe_Editor_Portfolio_Preview.png",
+                "title": "Preview",
+                "type": "image"
+            }
+        ],
         "description": [
             "A web app that allows users to personalize and share 3D models of premade shoes.",
             "This project is a proof of concept created to explore and demonstrate the capabilities of browser 3D rendering and user interaction, utilizing a customizable premade product.",

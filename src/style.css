@@ -345,17 +345,24 @@ nav>div:hover {
     width: 40%;
 }
 
-.projectImage {
+.projectSlideContainer {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     border-left: var(--defaultBorder);
     border-right: var(--defaultBorder);
     border-radius: var(--defaultBorderRadius);
+    overflow: hidden;
 }
 
-.projectImage>img {
+.projectSlideContainer>*{
+    flex-shrink: 0;
+}
+
+.projectSlideContainer>img {
     width: 98%;
+    padding-left: 1%;
+    padding-right: 1%;
     height: 50vh;
     border: none;
     border-color: transparent;
