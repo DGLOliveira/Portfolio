@@ -42,7 +42,8 @@
     background: var(--currentDefaultBackground);
 }
 
-html, body {
+html,
+body {
     position: absolute;
     top: 0;
     left: 0;
@@ -124,11 +125,11 @@ nav>div:hover {
     z-index: 2;
 }
 
-.scrollButton:hover{
+.scrollButton:hover {
     transform: translateX(-50%) scaleX(2.25) scaleY(1.5);
 }
 
-.scrollButton:active{
+.scrollButton:active {
     transform: translateX(-50%) scaleX(1.5) scaleY(1);
 }
 
@@ -257,7 +258,7 @@ nav>div:hover {
 }
 
 #aboutText>p {
-    margin:0;
+    margin: 0;
     padding: 0;
     margin-left: 1.5vh;
     margin-right: 1.5vh;
@@ -354,9 +355,11 @@ nav>div:hover {
     border-radius: var(--defaultBorderRadius);
     overflow: scroll;
     scroll-behavior: smooth;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox, Safari 18.2+, Chromium 121+ */
 }
 
-.projectSlideContainer>*{
+.projectSlideContainer>* {
     flex-shrink: 0;
     scroll-snap-align: center;
 }
@@ -369,6 +372,85 @@ nav>div:hover {
     border: none;
     border-color: transparent;
     object-fit: contain;
+}
+
+.projectSlideNav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.projectSlideNav>button {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+    color: var(--currentPrimaryFontColor);
+    transition: 0.1s;
+}
+
+.projectSlideNav>button:active {
+    transform: scale(0.9);
+}
+
+.projectSlideNav>button:hover {
+    color: var(--currentNavHighlight);
+}
+
+.projectSlideNav>button:disabled {
+    color: gray;
+    cursor: not-allowed;
+}
+
+.projectSlideNav>div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+
+input[type="radio"] {
+    -webkit-appearance: none;
+    appearance: none;
+    display: grid;
+    place-content: center;
+    margin: 5px;
+    border-radius: 50%;
+    max-width: 18px;
+    min-width: 18px;
+    max-height: 18px;
+    min-height: 18px;
+    background-color: var(--currentDefaultBackground);
+    border: 1px var(--currentPrimaryFontColor) solid;
+    cursor: pointer;
+}
+
+input[type="radio"]::before {
+    content: " ";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    background-color: var(--currentNavHighlight);
+}
+
+input[type="radio"]:checked::before {
+    transform: scale(1);
+}
+
+input[type="radio"]:hover {
+    border-color: var(--currentNavHighlight);
 }
 
 .projectDescription {
