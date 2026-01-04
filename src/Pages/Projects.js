@@ -27,7 +27,7 @@ export default function Projects() {
                 return (
                     <Project
                         project={projects_info[project]}
-                        index={index}
+                        projectIndex={index}
                     />
                 )
             })}

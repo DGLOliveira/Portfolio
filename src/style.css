@@ -352,11 +352,13 @@ nav>div:hover {
     border-left: var(--defaultBorder);
     border-right: var(--defaultBorder);
     border-radius: var(--defaultBorderRadius);
-    overflow: hidden;
+    overflow: scroll;
+    scroll-behavior: smooth;
 }
 
 .projectSlideContainer>*{
     flex-shrink: 0;
+    scroll-snap-align: center;
 }
 
 .projectSlideContainer>img {
