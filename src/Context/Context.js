@@ -13,6 +13,8 @@ export const Context = createContext({
     setScrollList: () => { },
     maximizedCarousel: false,
     setMaximizedCarousel: () => { },
+    maximizedCarouselSlide: 0,
+    setMaximizedCarouselSlide: () => { },
     carouselData: {},
     setCarouselData: () => { },
 });
@@ -24,8 +26,8 @@ export default function ContextProvider({ children }) {
     const [scrollTopMax, setScrollTopMax] = useState(0);
     const [scrollList, setScrollList] = useState([]);
     const [maximizedCarousel, setMaximizedCarousel] = useState(false);
+    const [maximizedCarouselSlide, setMaximizedCarouselSlide] = useState(0);
     const [carouselData, setCarouselData] = useState({
-        slide:0,
         slides: [],
         totalSlides: 0,
         projectIndex: 0,
@@ -47,6 +49,8 @@ export default function ContextProvider({ children }) {
         setScrollList,
         maximizedCarousel,
         setMaximizedCarousel,
+        maximizedCarouselSlide,
+        setMaximizedCarouselSlide,
         carouselData,
         setCarouselData
     };

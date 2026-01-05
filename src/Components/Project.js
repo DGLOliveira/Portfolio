@@ -8,20 +8,22 @@ export default function Projects({ project, projectIndex }) {
     const slideContainer = useRef(null)
     const [slide, setSlide] = useState(0);
     const context = useContext(Context);
-    const { maximizedCarousel, setMaximizedCarousel, carouselData, setCarouselData } = context;
+    const { maximizedCarousel, setMaximizedCarousel, maximizedCarouselSlide, setMaximizedCarouselSlide, carouselData, setCarouselData } = context;
 
     //Handles slide navigation buttons
-    const handleSlideButton = (direction) => {
-        console.log("handleSlideButton")
-        if (direction === 1 && slide < totalSlides - 1) {
-            setSlide(slide + 1)
+    //Note: For function to work outside of this component, the current slide must be passed as a parameter
+    const handleSlideButton = (direction, currSlide) => {
+        if (direction === 1 && currSlide < totalSlides - 1) {
+            setSlide(currSlide + 1)
+            setMaximizedCarouselSlide(currSlide + 1)
             if (slideContainer) {
-                slideContainer.current.children[slide + 1].scrollIntoView({ behavior: "smooth", block: 'nearest', inline: 'center' })
+                slideContainer.current.children[currSlide + 1].scrollIntoView({ behavior: "smooth", block: 'nearest', inline: 'center' })
             }
-        } else if (direction === -1 && slide > 0) {
-            setSlide(slide - 1)
+        } else if (direction === -1 && currSlide > 0) {
+            setSlide(currSlide - 1)
+            setMaximizedCarouselSlide(currSlide - 1)
             if (slideContainer) {
-                slideContainer.current.children[slide - 1].scrollIntoView({ behavior: "smooth", block: 'nearest', inline: 'center' })
+                slideContainer.current.children[currSlide - 1].scrollIntoView({ behavior: "smooth", block: 'nearest', inline: 'center' })
             }
         }
     }
@@ -29,6 +31,7 @@ export default function Projects({ project, projectIndex }) {
     //Handles slide navigation radio input
     const handleSlideInput = (index) => {
         setSlide(index)
+        setMaximizedCarouselSlide(index)
         if (slideContainer) {
             slideContainer.current.children[index].scrollIntoView({ behavior: "smooth", block: 'nearest', inline: 'center' })
         }
@@ -37,8 +40,8 @@ export default function Projects({ project, projectIndex }) {
     //Displays the maximized carousel with the current project slides, when a slide is clicked
     const handleMaximizeCarousel = () => {
         setMaximizedCarousel(true)
+        setMaximizedCarouselSlide(slide)
         setCarouselData({
-            slide: slide,
             slides: project.slides,
             totalSlides: totalSlides,
             projectIndex: projectIndex,
@@ -46,15 +49,6 @@ export default function Projects({ project, projectIndex }) {
             handleSlideInput: handleSlideInput
         })
     }
-
-    useEffect(() => {
-        if (maximizedCarousel) {
-            setCarouselData({
-                ...carouselData,
-                slide: slide
-            })
-        }
-    }, [slide])
 
     //Corrects the scroll to the current slide when the window is resized
     const resizeAdjustScroll = () => {
@@ -87,13 +81,13 @@ export default function Projects({ project, projectIndex }) {
                             })}
                         </div>
                         <div className="projectSlideNav">
-                            <button onClick={() => handleSlideButton(-1)} disabled={slide === 0}><IoIosArrowDropleft /></button>
+                            <button onClick={() => handleSlideButton(-1, slide)} disabled={slide === 0}><IoIosArrowDropleft /></button>
                             <div>
                                 {project.slides.map((_slide, index) => {
                                     return <input type="radio" name={projectIndex} value={index} checked={index === slide} onChange={() => handleSlideInput(index)} />
                                 })}
                             </div>
-                            <button onClick={() => handleSlideButton(1)} disabled={slide === totalSlides - 1}><IoIosArrowDropright /></button>
+                            <button onClick={() => handleSlideButton(1, slide)} disabled={slide === totalSlides - 1}><IoIosArrowDropright /></button>
                         </div>
                     </div>
                     <div>

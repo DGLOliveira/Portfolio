@@ -5,19 +5,22 @@ import { Context } from "../Context/Context.js";
 export default function MaximizedCarousel() {
     const maxSlideContainer = useRef(null);
     const context = useContext(Context);
-    const { slide, slides, totalSlides, projectIndex, handleSlideButton, handleSlideInput } = context.carouselData;
+    const [currSlide, setCurrSlide] = useState(0); //Must be used in order to update radio inputs correctly
+    const slide = context.maximizedCarouselSlide;
+    const { slides, totalSlides, projectIndex, handleSlideButton, handleSlideInput } = context.carouselData;
     //Scrolls the slide container to the current slide
     useEffect(() => {
+        setCurrSlide(slide)
         if (maxSlideContainer && maxSlideContainer.current.children[slide]) {
             maxSlideContainer.current.scrollTo(maxSlideContainer.current.children[slide].scrollWidth * slide, 0)
         }
-    }, [slide])
+    }, [slide, context.maximizedCarousel])
 
     //Closes the maximized carousel and clears the context data
     const closeMaximizedCarousel = () => {
         context.setMaximizedCarousel(false)
+        context.setMaximizedCarouselSlide(0)
         context.setCarouselData({
-            slide:0,
             slides: [],
             totalSlides: 0,
             projectIndex: 0,
@@ -57,13 +60,13 @@ export default function MaximizedCarousel() {
                     })}
                 </div>
                 <div id="MaxSlideNav">
-                    <button onClick={() => handleSlideButton(-1)} disabled={slide === 0}><IoIosArrowDropleft /></button>
+                    <button onClick={() => handleSlideButton(-1, slide)} disabled={slide === 0}><IoIosArrowDropleft /></button>
                     <div>
                         {slides.map((_slide, index) => {
-                            return <input type="radio" name={projectIndex} value={index} key={index} checked={index === slide} onChange={() => handleSlideInput(index)} />
+                            return <input type="radio" name={projectIndex} value={index} key={index} checked={index === currSlide} onChange={() => handleSlideInput(index)} />
                         })}
                     </div>
-                    <button onClick={() => handleSlideButton(1)} disabled={slide === totalSlides - 1}><IoIosArrowDropright /></button>
+                    <button onClick={() => handleSlideButton(1, slide)} disabled={slide === totalSlides - 1}><IoIosArrowDropright /></button>
                 </div>
             </div>
         </div>
