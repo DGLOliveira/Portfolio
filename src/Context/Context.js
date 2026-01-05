@@ -1,28 +1,41 @@
-import {useState, createContext} from "react";
+import { useState, createContext } from "react";
 
 export const Context = createContext({
     darkMode: false,
-    setDarkMode: () => {},
+    setDarkMode: () => { },
     scrollView: "intro",
-    setScrollView: () => {},
+    setScrollView: () => { },
     scrollTop: 0,
-    setScrollTop: () => {},
+    setScrollTop: () => { },
     scrollTopMax: 0,
-    setScrollTopMax: () => {},
+    setScrollTopMax: () => { },
     scrollList: [],
-    setScrollList: () => {}
+    setScrollList: () => { },
+    maximizedCarousel: false,
+    setMaximizedCarousel: () => { },
+    carouselData: {},
+    setCarouselData: () => { },
 });
 
-export default function ContextProvider({children}) {
+export default function ContextProvider({ children }) {
     const [darkMode, setDarkMode] = useState(false);
     const [scrollView, setScrollView] = useState("intro");
     const [scrollTop, setScrollTop] = useState(0);
     const [scrollTopMax, setScrollTopMax] = useState(0);
     const [scrollList, setScrollList] = useState([]);
+    const [maximizedCarousel, setMaximizedCarousel] = useState(false);
+    const [carouselData, setCarouselData] = useState({
+        slides: [],
+        slide: 0,
+        totalSlides: 0,
+        projectIndex: 0,
+        handleSlideButton: () => { },
+        handleSlideInput: () => { }
 
+    });
 
     const contextValue = {
-        darkMode, 
+        darkMode,
         setDarkMode,
         scrollView,
         setScrollView,
@@ -31,7 +44,11 @@ export default function ContextProvider({children}) {
         scrollTopMax,
         setScrollTopMax,
         scrollList,
-        setScrollList
+        setScrollList,
+        maximizedCarousel,
+        setMaximizedCarousel,
+        carouselData,
+        setCarouselData
     };
 
     return (

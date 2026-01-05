@@ -1,11 +1,15 @@
 import { useState, useEffect, useRef } from "react";
 import { FaGithub, FaLink, FaFilePdf } from "react-icons/fa";
 import { IoIosArrowDropleft, IoIosArrowDropright } from "react-icons/io";
+import { Context } from "../Context/Context.js";
+import { useContext } from "react";
 
 export default function Projects({ project, projectIndex }) {
     const totalSlides = project.slides.length;
     const slideContainer = useRef(null)
     const [slide, setSlide] = useState(0);
+    const context = useContext(Context);
+    const { maximizedCarousel, setMaximizedCarousel, carouselData, setCarouselData } = context;
 
     //Handles slide navigation buttons
     const handleSlideButton = (direction) => {
@@ -22,6 +26,7 @@ export default function Projects({ project, projectIndex }) {
         }
     }
 
+    //Handles slide navigation radio input
     const handleSlideInput = (index) => {
         setSlide(index)
         if (slideContainer) {
@@ -29,9 +34,21 @@ export default function Projects({ project, projectIndex }) {
         }
     }
 
+    //Displays the maximized carousel with the current project slides, when a slide is clicked
+    const handleMaximizeCarousel = () =>{
+        setMaximizedCarousel(true)
+        setCarouselData({ 
+            slides: project.slides, 
+            slide: slide, 
+            totalSlides: totalSlides, 
+            projectIndex: projectIndex, 
+            handleSlideButton: handleSlideButton, 
+            handleSlideInput: handleSlideInput 
+        })
+    }
+
     //Corrects the scroll to the current slide when the window is resized
     const resizeAdjustScroll = () => {
-        console.log("resized")
         if (slideContainer) {
             slideContainer.current.scrollTo(slideContainer.current.children[slide].scrollWidth * slide, 0)
         }
@@ -49,7 +66,7 @@ export default function Projects({ project, projectIndex }) {
                 <h2 className="projectName">{project.name}</h2>
                 <div>
                     <div className="projectSlides">
-                        <div ref={slideContainer} className="projectSlideContainer">
+                        <div ref={slideContainer} className="projectSlideContainer" onClick={() => handleMaximizeCarousel()}>
                             {project.slides.map((slide, index) => {
                                 return (
                                     <img
@@ -91,7 +108,7 @@ export default function Projects({ project, projectIndex }) {
                                             href={project.docs}
                                             style={{ backgroundColor: "red" }}>
                                             <FaFilePdf />
-                                            Docs
+                                            Docs //Currently unavailable
                                         </a>*/}
                             <a
                                 target="_blank"

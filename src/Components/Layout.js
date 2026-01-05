@@ -1,6 +1,7 @@
 import { useContext, useState, useEffect } from "react";
 import { Context } from "./../Context/Context.js";
 import DarkMode from "./DarkMode.js";
+import MaximizedCarousel from "./MaximizedCarousel.js";
 import { FaAngleDoubleUp, FaAngleDoubleDown } from "react-icons/fa";
 
 export default function Layout() {
@@ -67,6 +68,7 @@ export default function Layout() {
             >
                 <FaAngleDoubleDown />
             </button>
+            <MaximizedCarousel />
         </>
     );
 }
