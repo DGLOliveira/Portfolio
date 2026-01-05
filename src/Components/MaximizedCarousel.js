@@ -1,11 +1,11 @@
-import { useContext, useRef, useEffect } from "react";
+import { useState, useContext, useRef, useEffect } from "react";
 import { IoIosArrowDropleft, IoIosArrowDropright, IoIosCloseCircleOutline } from "react-icons/io";
 import { Context } from "../Context/Context.js";
 
 export default function MaximizedCarousel() {
     const maxSlideContainer = useRef(null);
     const context = useContext(Context);
-    const { slides, slide, totalSlides, projectIndex, handleSlideButton, handleSlideInput } = context.carouselData;
+    const { slide, slides, totalSlides, projectIndex, handleSlideButton, handleSlideInput } = context.carouselData;
     //Scrolls the slide container to the current slide
     useEffect(() => {
         if (maxSlideContainer && maxSlideContainer.current.children[slide]) {
@@ -17,8 +17,8 @@ export default function MaximizedCarousel() {
     const closeMaximizedCarousel = () => {
         context.setMaximizedCarousel(false)
         context.setCarouselData({
+            slide:0,
             slides: [],
-            slide: 0,
             totalSlides: 0,
             projectIndex: 0,
             handleSlideButton: () => { },
@@ -44,7 +44,7 @@ export default function MaximizedCarousel() {
             <button id="closeMaximizedCarousel" onClick={closeMaximizedCarousel} >
                 <IoIosCloseCircleOutline />
             </button>
-            <div className="MaxProjectSlides">
+            <div id="MaxProjectSlides">
                 <div ref={maxSlideContainer} id="MaxSlideContainer">
                     {slides.map((slide, index) => {
                         return (
@@ -56,11 +56,11 @@ export default function MaximizedCarousel() {
                         )
                     })}
                 </div>
-                <div className="MaxSlideNav">
+                <div id="MaxSlideNav">
                     <button onClick={() => handleSlideButton(-1)} disabled={slide === 0}><IoIosArrowDropleft /></button>
                     <div>
                         {slides.map((_slide, index) => {
-                            return <input type="radio" name={projectIndex} value={index} checked={index === slide} onChange={() => handleSlideInput(index)} />
+                            return <input type="radio" name={projectIndex} value={index} key={index} checked={index === slide} onChange={() => handleSlideInput(index)} />
                         })}
                     </div>
                     <button onClick={() => handleSlideButton(1)} disabled={slide === totalSlides - 1}><IoIosArrowDropright /></button>

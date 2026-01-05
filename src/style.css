@@ -142,15 +142,123 @@ nav>div:hover {
     top: 95vh;
 }
 
-#maximizedCarousel{
-    position: fixed;
+#maximizedCarousel {
+    position: fixed ! important;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
-    background: var(--currentDefaultBackground);
+    height: 100%;
+    background: hsla(0, 0%, 0%, 0.95);
     z-index: 3;
     transition: var(--themeTransition);
+
+    #closeMaximizedCarousel {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 10vh;
+        height: 10vh;
+        font-size: 5vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--currentPrimaryFontColor);
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        transition: 0.1s ease-in-out;
+        z-index: 3;
+
+        :hover {
+            color: var(--currentNavHighlight);
+        }
+    }
+
+    #MaxProjectSlides {
+        position: fixed;
+        top: 5%;
+        left: 5%;
+        width: 90%;
+        height: 80%;
+        overflow: hidden;
+
+        #MaxSlideContainer {
+            position: absolute;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+            align-items: center;
+            border-left: var(--defaultBorder);
+            border-right: var(--defaultBorder);
+            border-radius: var(--defaultBorderRadius);
+            transition: var(--themeTransition);
+            overflow: scroll;
+            scroll-behavior: smooth;
+            -ms-overflow-style: none;
+            /* Internet Explorer 10+ */
+            scrollbar-width: none;
+            /* Firefox, Safari 18.2+, Chromium 121+ */
+
+            * {
+                flex-shrink: 0;
+                scroll-snap-align: center;
+            }
+
+            img {
+                width: 98%;
+                padding-left: 1%;
+                padding-right: 1%;
+                height: 98%;
+                border: none;
+                border-color: transparent;
+                object-fit: contain;
+            }
+        }
+    }
+
+    #MaxSlideNav {
+        position: fixed;
+        bottom: 5%;
+        left: 5%;
+        width: 90%;
+        height: 5vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        div {
+            display: flex;
+
+        }
+
+        button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: transparent;
+            font-size: 30px;
+            border: none;
+            cursor: pointer;
+            color: var(--currentPrimaryFontColor);
+            transition: 0.1s;
+
+            :active {
+                transform: scale(0.9);
+            }
+
+            :hover {
+                color: var(--currentNavHighlight);
+            }
+
+            :disabled {
+                color: gray;
+                cursor: not-allowed;
+            }
+        }
+    }
+
 }
 
 
@@ -368,11 +476,13 @@ nav>div:hover {
     transition: var(--themeTransition);
     overflow: scroll;
     scroll-behavior: smooth;
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
-    scrollbar-width: none;  /* Firefox, Safari 18.2+, Chromium 121+ */
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */
+    scrollbar-width: none;
+    /* Firefox, Safari 18.2+, Chromium 121+ */
 }
 
-.projectSlideContainer:hover{
+.projectSlideContainer:hover {
     cursor: pointer;
     border-color: var(--currentNavHighlight);
 }
@@ -401,7 +511,7 @@ nav>div:hover {
 }
 
 .projectSlideNav>button {
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     background: transparent;

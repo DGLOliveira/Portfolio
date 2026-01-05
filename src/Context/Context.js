@@ -25,8 +25,8 @@ export default function ContextProvider({ children }) {
     const [scrollList, setScrollList] = useState([]);
     const [maximizedCarousel, setMaximizedCarousel] = useState(false);
     const [carouselData, setCarouselData] = useState({
+        slide:0,
         slides: [],
-        slide: 0,
         totalSlides: 0,
         projectIndex: 0,
         handleSlideButton: () => { },

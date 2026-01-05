@@ -1,8 +1,7 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
 import { FaGithub, FaLink, FaFilePdf } from "react-icons/fa";
 import { IoIosArrowDropleft, IoIosArrowDropright } from "react-icons/io";
 import { Context } from "../Context/Context.js";
-import { useContext } from "react";
 
 export default function Projects({ project, projectIndex }) {
     const totalSlides = project.slides.length;
@@ -13,13 +12,14 @@ export default function Projects({ project, projectIndex }) {
 
     //Handles slide navigation buttons
     const handleSlideButton = (direction) => {
+        console.log("handleSlideButton")
         if (direction === 1 && slide < totalSlides - 1) {
-            setSlide(slide => slide + 1)
+            setSlide(slide + 1)
             if (slideContainer) {
                 slideContainer.current.children[slide + 1].scrollIntoView({ behavior: "smooth", block: 'nearest', inline: 'center' })
             }
         } else if (direction === -1 && slide > 0) {
-            setSlide(slide => slide - 1)
+            setSlide(slide - 1)
             if (slideContainer) {
                 slideContainer.current.children[slide - 1].scrollIntoView({ behavior: "smooth", block: 'nearest', inline: 'center' })
             }
@@ -35,17 +35,26 @@ export default function Projects({ project, projectIndex }) {
     }
 
     //Displays the maximized carousel with the current project slides, when a slide is clicked
-    const handleMaximizeCarousel = () =>{
+    const handleMaximizeCarousel = () => {
         setMaximizedCarousel(true)
-        setCarouselData({ 
-            slides: project.slides, 
-            slide: slide, 
-            totalSlides: totalSlides, 
-            projectIndex: projectIndex, 
-            handleSlideButton: handleSlideButton, 
-            handleSlideInput: handleSlideInput 
+        setCarouselData({
+            slide: slide,
+            slides: project.slides,
+            totalSlides: totalSlides,
+            projectIndex: projectIndex,
+            handleSlideButton: handleSlideButton,
+            handleSlideInput: handleSlideInput
         })
     }
+
+    useEffect(() => {
+        if (maximizedCarousel) {
+            setCarouselData({
+                ...carouselData,
+                slide: slide
+            })
+        }
+    }, [slide])
 
     //Corrects the scroll to the current slide when the window is resized
     const resizeAdjustScroll = () => {
