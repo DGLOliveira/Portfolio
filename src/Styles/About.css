@@ -122,37 +122,58 @@
 
 
 @media screen and (max-width: 600px) {
-    #about>div>h1 {
-        font-size: 6vw;
+
+    #about {
+        flex-direction: column;
+        justify-content: center;
+        height: 100% !important;
+        padding-top: 10%;
+        padding-bottom: 2%;
+        box-sizing: border-box;
+
+        >div {
+            width: 95%;
+
+        }
     }
 
-    #skills>div>h5 {
-        font-size: 4vw;
+    #skills {
+        margin-bottom: 1vh !important;
+
+        >div>h5 {
+            font-size: 3.5vw !important;
+        }
     }
 
     .skillCard {
-        width: 10vw;
+        width: 10vw !important;
+
+        >img {
+            width: 5vw !important;
+            height: 5vw !important;
+        }
+
+        >svg {
+            width: 5vw !important;
+            height: 5vw !important;
+        }
+
+        >p {
+            font-size: 2vw !important;
+        }
     }
 
-    .skillCard>img {
-        width: 5vw;
-        height: 5vw;
-    }
+    #aboutText {
+        max-height: 100% !important;
+        margin: 1vh;
+        box-sizing: border-box;
 
-    .skillCard>svg {
-        width: 5vw;
-        height: 5vw;
-    }
-
-    .skillCard>p {
-        font-size: 2.5vw;
-    }
-
-    #aboutText>p {
-        margin-left: 1.5vw;
-        margin-right: 1.5vw;
-        padding-top: 1.5vw;
-        padding-bottom: 1.5vw;
-        font-size: 3vw;
+        >p {
+            margin-left: 1.5vw !important;
+            margin-right: 1.5vw !important;
+            padding-top: 1.5vw !important;
+            padding-bottom: 1.5vw !important;
+            font-size: 3vw !important;
+        }
     }
 }
