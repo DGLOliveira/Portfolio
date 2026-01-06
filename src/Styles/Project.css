@@ -8,7 +8,8 @@
 
     .projectName {
         font-size: 5vh;
-        margin-bottom: 5vh;
+        margin-top: 2.5vh;
+        margin-bottom: 2.5vh;
         transition: var(--themeTransition);
     }
 
@@ -166,8 +167,8 @@
             border-radius: var(--defaultBorderRadius);
             color: whitesmoke;
             padding: 5px;
-            margin: 5px;
-            font-size: 3vh;
+            margin-top: 5px;
+            font-size: 2.5vh;
             text-decoration: none;
             cursor: pointer;
 
@@ -189,8 +190,6 @@
 
     .project>div {
         height: 90vh;
-
-
 
         >div {
             height: 100%;
@@ -214,7 +213,6 @@
             }
         }
     }
-
 
     .projectName {
         font-size: 6vw !important;
