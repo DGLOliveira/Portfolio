@@ -32,22 +32,20 @@
 
     >#MaxProjectSlides {
         position: fixed;
-        top: 5%;
-        left: 5%;
-        width: 90%;
-        height: 80%;
+        display: flex;
+        flex-direction: column;
+        top: 0;
+        left: 2%;
+        width: 96%;
+        height: 100%;
         overflow: hidden;
 
         >#MaxSlideContainer {
-            position: absolute;
             height: 100%;
             display: flex;
             flex-direction: row;
             justify-content: start;
             align-items: center;
-            border-left: var(--defaultBorder);
-            border-right: var(--defaultBorder);
-            border-radius: var(--defaultBorderRadius);
             transition: var(--themeTransition);
             overflow: scroll;
             scroll-behavior: smooth;
@@ -62,10 +60,8 @@
             }
 
             >img {
-                width: 98%;
-                padding-left: 1%;
-                padding-right: 1%;
-                height: 98%;
+                width: 100%;
+                height: 100%;
                 border: none;
                 border-color: transparent;
                 object-fit: contain;
@@ -74,19 +70,20 @@
     }
 
     #MaxSlideNav {
-        position: fixed;
-        bottom: 5%;
-        left: 5%;
-        width: 90%;
-        height: 5vh;
+        width: 100%;
+        padding-left: 5%;
+        padding-right: 5%;
+        box-sizing: border-box;
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
 
         >div {
             display: flex;
-
+            flex-wrap: wrap;
+            padding-left: 5%;
+            padding-right: 5%;
         }
 
         >button {
