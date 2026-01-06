@@ -18,7 +18,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        color: var(--currentPrimaryFontColor);
+        color: white;
         background: transparent;
         border: none;
         cursor: pointer;
@@ -94,7 +94,7 @@
             font-size: 30px;
             border: none;
             cursor: pointer;
-            color: var(--currentPrimaryFontColor);
+            color: white;
             transition: 0.1s;
 
             &:active {
