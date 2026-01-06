@@ -5,7 +5,7 @@ import Intro from "./Pages/Intro.js";
 import About from "./Pages/About.js";
 import Projects from "./Pages/Projects.js";
 import Contacts from "./Pages/Contacts.js";
-import "./style.css";
+import "./Styles/App.css"
 
 export default function App() {
     const context = useContext(Context);

@@ -1,0 +1,65 @@
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5vh;
+    background: var(--currentBackgroundOverlay);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 2;
+    transition: var(--themeTransition);
+
+    >div {
+        font-size: 3vh;
+        cursor: pointer;
+        transition: var(--themeTransition);
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.scrollButton {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%) scaleX(1.5) scaleY(1);
+    width: 4.5vh;
+    height: 4.5vh;
+    font-size: 3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--currentPrimaryFontColor);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+    z-index: 2;
+
+    &:hover {
+        color: var(--currentNavHighlight);
+        transform: translateX(-50%) scaleX(2.25) scaleY(1.5);
+    }
+
+    &:active {
+        transform: translateX(-50%) scaleX(1.5) scaleY(1);
+    }
+
+
+    &#scrollUp {
+        top: 5.2vh;
+    }
+
+    &#scrollDown {
+        top: 95vh;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    nav>div {
+        font-size: 3vw;
+    }
+}

@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { Context } from "./../Context/Context.js";
+import "../Styles/About.css";
 import HTML from "./../Assets/HTML5.svg";
 import CSS from "./../Assets/CSS3.svg";
 import JS from "./../Assets/JS.svg";

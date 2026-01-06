@@ -1,8 +1,9 @@
 import { useContext, useState, useEffect } from "react";
 import { Context } from "./../Context/Context.js";
+import { FaAngleDoubleUp, FaAngleDoubleDown } from "react-icons/fa";
 import DarkMode from "./DarkMode.js";
 import MaximizedCarousel from "./MaximizedCarousel.js";
-import { FaAngleDoubleUp, FaAngleDoubleDown } from "react-icons/fa";
+import "../Styles/Layout.css";
 
 export default function Layout() {
     const context = useContext(Context);

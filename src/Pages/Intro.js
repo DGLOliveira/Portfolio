@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "../Styles/Intro.css";
 
 export default function Intro() {
     const [introIndex, setIntroIndex] = useState(-1)

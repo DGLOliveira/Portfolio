@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, useContext } from "react";
 import { FaGithub, FaLink, FaFilePdf } from "react-icons/fa";
 import { IoIosArrowDropleft, IoIosArrowDropright } from "react-icons/io";
 import { Context } from "../Context/Context.js";
+import "../Styles/Project.css";
 
 export default function Projects({ project, projectIndex }) {
     const totalSlides = project.slides.length;

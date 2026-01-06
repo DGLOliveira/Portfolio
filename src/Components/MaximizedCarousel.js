@@ -1,6 +1,7 @@
 import { useState, useContext, useRef, useEffect } from "react";
 import { IoIosArrowDropleft, IoIosArrowDropright, IoIosCloseCircleOutline } from "react-icons/io";
 import { Context } from "../Context/Context.js";
+import "../Styles/MaximizedCarousel.css"
 
 export default function MaximizedCarousel() {
     const maxSlideContainer = useRef(null);

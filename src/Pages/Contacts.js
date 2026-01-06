@@ -1,6 +1,7 @@
 import { FaLinkedin } from "react-icons/fa6";
 import { IoMdMail } from "react-icons/io";
 import { FaGithub } from "react-icons/fa";
+import "../Styles/Contacts.css";
 
 export default function Contacts() {
   return (
