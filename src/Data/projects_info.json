@@ -74,6 +74,51 @@
                 "url": "https://raw.githubusercontent.com/DGLOliveira/3D-Print-Shop/refs/heads/main/docs/Home_Light.jpg",
                 "title": "Home Page Light Theme",
                 "type": "image"
+            },
+            {
+                "url": "https://raw.githubusercontent.com/DGLOliveira/3D-Print-Shop/refs/heads/main/docs/Home_Dark.jpg",
+                "title": "Home Page Dark Theme",
+                "type": "image"
+            },
+            {
+                "url": "https://raw.githubusercontent.com/DGLOliveira/3D-Print-Shop/refs/heads/main/docs/Home_Light_Chatbot.jpg",
+                "title": "Chatbot Light Theme",
+                "type": "image"
+            },
+            {
+                "url": "https://raw.githubusercontent.com/DGLOliveira/3D-Print-Shop/refs/heads/main/docs/Home_Dark_Chatbot.jpg",
+                "title": "Chatbot Dark Theme",
+                "type": "image"
+            },
+            {
+                "url": "https://raw.githubusercontent.com/DGLOliveira/3D-Print-Shop/refs/heads/main/docs/Store_Light.jpg",
+                "title": "Store Light Theme",
+                "type": "image"
+            },
+            {
+                "url": "https://raw.githubusercontent.com/DGLOliveira/3D-Print-Shop/refs/heads/main/docs/Store_Dark.jpg",
+                "title": "Store Dark Theme",
+                "type": "image"
+            },
+            {
+                "url": "https://raw.githubusercontent.com/DGLOliveira/3D-Print-Shop/refs/heads/main/docs/Product_Winged_Victory_Light.jpg",
+                "title": "Product Image Light Theme",
+                "type": "image"
+            },
+            {
+                "url": "https://raw.githubusercontent.com/DGLOliveira/3D-Print-Shop/refs/heads/main/docs/Product_Winged_Victory_Dark.jpg",
+                "title": "Product Image Dark Theme",
+                "type": "image"
+            },
+            {
+                "url": "https://raw.githubusercontent.com/DGLOliveira/3D-Print-Shop/refs/heads/main/docs/Product_Winged_Victory_Light_3D.jpg",
+                "title": "Product 3D Light Theme",
+                "type": "image"
+            },
+            {
+                "url": "https://raw.githubusercontent.com/DGLOliveira/3D-Print-Shop/refs/heads/main/docs/Product_Winged_Victory_Dark_3D.jpg",
+                "title": "Product Dark Light Theme",
+                "type": "image"
             }
         ],
         "description": [
