@@ -134,8 +134,28 @@
         "name": "Shoe Editor",
         "slides": [
             {
+                "url": "https://raw.githubusercontent.com/DGLOliveira/Shoe-Editor/refs/heads/main/docs/Start_Angle.png",
+                "title": "Start Point",
+                "type": "image"
+            },
+            {
+                "url": "https://raw.githubusercontent.com/DGLOliveira/Shoe-Editor/refs/heads/main/docs/Select_Edit.png",
+                "title": "Start Customize Model",
+                "type": "image"
+            },
+            {
                 "url": "https://raw.githubusercontent.com/DGLOliveira/Shoe-Editor/refs/heads/main/docs/Shoe_Editor_Portfolio_Preview.png",
-                "title": "Preview",
+                "title": "Preview Skater Model",
+                "type": "image"
+            },
+            {
+                "url": "https://raw.githubusercontent.com/DGLOliveira/Shoe-Editor/refs/heads/main/docs/Shoe_Editor_Readme_Preview.png",
+                "title": "Preview Sneaker Model",
+                "type": "image"
+            },
+            {
+                "url": "https://raw.githubusercontent.com/DGLOliveira/Shoe-Editor/refs/heads/main/docs/Share.png",
+                "title": "Share Model",
                 "type": "image"
             }
         ],
