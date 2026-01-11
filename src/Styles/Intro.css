@@ -1,5 +1,7 @@
-#intro>div{
+/*Enforcement of css rules that are, for some unknown reason, ignored by npm production deployment*/
+#intro>div {
     display: flex;
+    height: 100%;
 }
 
 #intro {
