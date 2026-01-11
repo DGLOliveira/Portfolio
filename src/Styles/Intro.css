@@ -1,3 +1,7 @@
+#intro>div{
+    display: flex;
+}
+
 #intro {
     text-align: center;
 
