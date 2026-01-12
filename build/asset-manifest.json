@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.ba83514d.css",
-    "main.js": "/Portfolio/static/js/main.b899edd3.js",
+    "main.css": "/Portfolio/static/css/main.626d51a2.css",
+    "main.js": "/Portfolio/static/js/main.636c07d9.js",
     "static/media/waternormals.jpeg": "/Portfolio/static/media/waternormals.537ec85b965d414829ab.jpeg",
     "static/media/CHash.svg": "/Portfolio/static/media/CHash.04d9d2bb18b9781567f7340691dcc686.svg",
     "static/media/Blender.svg": "/Portfolio/static/media/Blender.35840337759367f32b7b3001e3c0063a.svg",
@@ -13,11 +13,11 @@
     "static/media/HTML5.svg": "/Portfolio/static/media/HTML5.6ee805f4d7499612a1c9f682b3f6614d.svg",
     "static/media/JS.svg": "/Portfolio/static/media/JS.b879f838faf1cb951d1c2230fd933a39.svg",
     "static/media/React.svg": "/Portfolio/static/media/React.301b78b687e38329b456924836279ad6.svg",
-    "main.ba83514d.css.map": "/Portfolio/static/css/main.ba83514d.css.map",
-    "main.b899edd3.js.map": "/Portfolio/static/js/main.b899edd3.js.map"
+    "main.626d51a2.css.map": "/Portfolio/static/css/main.626d51a2.css.map",
+    "main.636c07d9.js.map": "/Portfolio/static/js/main.636c07d9.js.map"
   },
   "entrypoints": [
-    "static/css/main.ba83514d.css",
-    "static/js/main.b899edd3.js"
+    "static/css/main.626d51a2.css",
+    "static/js/main.636c07d9.js"
   ]
 }
