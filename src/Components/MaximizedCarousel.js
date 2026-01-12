@@ -29,6 +29,12 @@ export default function MaximizedCarousel() {
             handleSlideInput: () => { }
         })
     }
+    
+    //Updates current slide index when the slide container is scrolled
+    const handleScrolling = (e)=>{
+        const scrollPercentage = e.target.scrollLeft / e.target.scrollWidth;
+        setCurrSlide(Math.round(scrollPercentage*totalSlides))
+    }
 
     //Corrects the scroll to the current slide when the window is resized
     const resizeAdjustScroll = () => {
@@ -49,7 +55,7 @@ export default function MaximizedCarousel() {
                 <IoIosCloseCircleOutline />
             </button>
             <div id="MaxProjectSlides">
-                <div ref={maxSlideContainer} id="MaxSlideContainer">
+                <div ref={maxSlideContainer} id="MaxSlideContainer" onScroll={(e) => handleScrolling(e)}>
                     {slides.map((slide, index) => {
                         return (
                             <img
