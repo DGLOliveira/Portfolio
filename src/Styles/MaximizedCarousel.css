@@ -50,6 +50,8 @@
             overflow: scroll;
             scroll-behavior: smooth;
             -ms-overflow-style: none;
+            scroll-snap-type: both mandatory;
+            overscroll-behavior-x: contain;
             /* Internet Explorer 10+ */
             scrollbar-width: none;
             /* Firefox, Safari 18.2+, Chromium 121+ */
