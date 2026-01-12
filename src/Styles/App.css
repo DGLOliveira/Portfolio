@@ -63,8 +63,8 @@ body,
     overflow: scroll;
     color: var(--currentPrimaryFontColor);
     scroll-behavior: smooth;
-    /*scroll-snap-type: both mandatory;
-    overscroll-behavior-x: contain;*/
+    scroll-snap-type: both mandatory;
+    overscroll-behavior-x: contain;
     transition: var(--themeTransition);
 
     >div {
