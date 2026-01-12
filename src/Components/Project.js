@@ -11,17 +11,15 @@ export default function Projects({ project, projectIndex }) {
     const context = useContext(Context);
     const { maximizedCarousel, setMaximizedCarousel, maximizedCarouselSlide, setMaximizedCarouselSlide, carouselData, setCarouselData } = context;
 
-    //Handles slide navigation buttons
+    //Handles slide navigation buttons, scrolling to the correct slide
     //Note: For function to work outside of this component, the current slide must be passed as a parameter
     const handleSlideButton = (direction, currSlide) => {
         if (direction === 1 && currSlide < totalSlides - 1) {
-            setSlide(currSlide + 1)
             setMaximizedCarouselSlide(currSlide + 1)
             if (slideContainer) {
                 slideContainer.current.children[currSlide + 1].scrollIntoView({ behavior: "smooth", block: 'nearest', inline: 'center' })
             }
         } else if (direction === -1 && currSlide > 0) {
-            setSlide(currSlide - 1)
             setMaximizedCarouselSlide(currSlide - 1)
             if (slideContainer) {
                 slideContainer.current.children[currSlide - 1].scrollIntoView({ behavior: "smooth", block: 'nearest', inline: 'center' })
@@ -29,9 +27,8 @@ export default function Projects({ project, projectIndex }) {
         }
     }
 
-    //Handles slide navigation radio input
+    //Handles slide navigation radio input, scrolling to the correct slide
     const handleSlideInput = (index) => {
-        setSlide(index)
         setMaximizedCarouselSlide(index)
         if (slideContainer) {
             slideContainer.current.children[index].scrollIntoView({ behavior: "smooth", block: 'nearest', inline: 'center' })
@@ -49,6 +46,12 @@ export default function Projects({ project, projectIndex }) {
             handleSlideButton: handleSlideButton,
             handleSlideInput: handleSlideInput
         })
+    }
+
+    //Updates current slide index when the slide container is scrolled
+    const handleScrolling = (e)=>{
+        const scrollPercentage = e.target.scrollLeft / e.target.scrollWidth;
+        setSlide(Math.round(scrollPercentage*totalSlides))
     }
 
     //Corrects the scroll to the current slide when the window is resized
@@ -70,7 +73,7 @@ export default function Projects({ project, projectIndex }) {
                 <h2 className="projectName">{project.name}</h2>
                 <div>
                     <div className="projectSlides">
-                        <div ref={slideContainer} className="projectSlideContainer" onClick={() => handleMaximizeCarousel()}>
+                        <div ref={slideContainer} className="projectSlideContainer" onClick={() => handleMaximizeCarousel()} onScroll={(e)=>{handleScrolling(e)}}>
                             {project.slides.map((slide, index) => {
                                 return (
                                     <img
