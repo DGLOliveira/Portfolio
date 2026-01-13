@@ -15,12 +15,10 @@ export default function Projects({ project, projectIndex }) {
     //Note: For function to work outside of this component, the current slide must be passed as a parameter
     const handleSlideButton = (direction, currSlide) => {
         if (direction === 1 && currSlide < totalSlides - 1) {
-            setMaximizedCarouselSlide(currSlide + 1)
             if (slideContainer) {
                 slideContainer.current.children[currSlide + 1].scrollIntoView({ behavior: "smooth", block: 'nearest', inline: 'center' })
             }
         } else if (direction === -1 && currSlide > 0) {
-            setMaximizedCarouselSlide(currSlide - 1)
             if (slideContainer) {
                 slideContainer.current.children[currSlide - 1].scrollIntoView({ behavior: "smooth", block: 'nearest', inline: 'center' })
             }
@@ -29,7 +27,6 @@ export default function Projects({ project, projectIndex }) {
 
     //Handles slide navigation radio input, scrolling to the correct slide
     const handleSlideInput = (index) => {
-        setMaximizedCarouselSlide(index)
         if (slideContainer) {
             slideContainer.current.children[index].scrollIntoView({ behavior: "smooth", block: 'nearest', inline: 'center' })
         }
@@ -43,7 +40,6 @@ export default function Projects({ project, projectIndex }) {
             slides: project.slides,
             totalSlides: totalSlides,
             projectIndex: projectIndex,
-            handleSlideButton: handleSlideButton,
             handleSlideInput: handleSlideInput
         })
     }

@@ -31,7 +31,6 @@ export default function ContextProvider({ children }) {
         slides: [],
         totalSlides: 0,
         projectIndex: 0,
-        handleSlideButton: () => { },
         handleSlideInput: () => { }
 
     });

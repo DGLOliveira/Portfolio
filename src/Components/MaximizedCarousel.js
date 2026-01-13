@@ -8,7 +8,7 @@ export default function MaximizedCarousel() {
     const context = useContext(Context);
     const [currSlide, setCurrSlide] = useState(0); //Must be used in order to update radio inputs correctly
     const slide = context.maximizedCarouselSlide;
-    const { slides, totalSlides, projectIndex, handleSlideButton, handleSlideInput } = context.carouselData;
+    const { slides, totalSlides, projectIndex, handleSlideInput } = context.carouselData;
     //Scrolls the slide container to the current slide
     useEffect(() => {
         setCurrSlide(slide)
@@ -21,13 +21,33 @@ export default function MaximizedCarousel() {
     const closeMaximizedCarousel = () => {
         context.setMaximizedCarousel(false)
         context.setMaximizedCarouselSlide(0)
+        handleSlideInput(currSlide)
         context.setCarouselData({
             slides: [],
             totalSlides: 0,
             projectIndex: 0,
-            handleSlideButton: () => { },
             handleSlideInput: () => { }
         })
+    }
+
+    //Handles slide navigation radio input, scrolling to the correct slide
+    const handleInput = (index) => {
+        if (maxSlideContainer) {
+            maxSlideContainer.current.children[index].scrollIntoView({ behavior: "smooth", block: 'nearest', inline: 'center' })
+        }
+    }
+
+    //Handles slide navigation buttons, scrolling to the correct slide
+    const handleButton = (direction, currSlide) => {
+        if (direction === 1 && currSlide < totalSlides - 1) {
+            if (maxSlideContainer) {
+                maxSlideContainer.current.children[currSlide + 1].scrollIntoView({ behavior: "smooth", block: 'nearest', inline: 'center' })
+            }
+        } else if (direction === -1 && currSlide > 0) {
+            if (maxSlideContainer) {
+                maxSlideContainer.current.children[currSlide - 1].scrollIntoView({ behavior: "smooth", block: 'nearest', inline: 'center' })
+            }
+        }
     }
 
     //Updates current slide index when the slide container is scrolled
@@ -80,13 +100,13 @@ export default function MaximizedCarousel() {
                     })}
                 </div>
                 <div id="MaxSlideNav">
-                    <button onClick={() => handleSlideButton(-1, slide)} disabled={slide === 0}><IoIosArrowDropleft /></button>
+                    <button onClick={() => handleButton(-1, currSlide)} disabled={currSlide === 0}><IoIosArrowDropleft /></button>
                     <div>
                         {slides.map((_slide, index) => {
-                            return <input type="radio" name={projectIndex} value={index} key={index} checked={index === currSlide} onChange={() => handleSlideInput(index)} />
+                            return <input type="radio" name={projectIndex} value={index} key={index} checked={index === currSlide} onChange={() => handleInput(index)} />
                         })}
                     </div>
-                    <button onClick={() => handleSlideButton(1, slide)} disabled={slide === totalSlides - 1}><IoIosArrowDropright /></button>
+                    <button onClick={() => handleButton(1, currSlide)} disabled={currSlide === totalSlides - 1}><IoIosArrowDropright /></button>
                 </div>
             </div>
         </div>
