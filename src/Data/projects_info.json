@@ -134,6 +134,12 @@
         "name": "Shoe Editor",
         "slides": [
             {
+                "url":"https://github.com/DGLOliveira/Shoe-Editor/raw/refs/heads/main/docs/Shoe_Editor_Video_Demo.mp4",
+                "cover":"https://raw.githubusercontent.com/DGLOliveira/Shoe-Editor/refs/heads/main/docs/Shoe_Editor_Video_Demo-Cover.jpg",
+                "title": "Video Demo",
+                "type": "video/mp4"
+            },
+            {
                 "url": "https://raw.githubusercontent.com/DGLOliveira/Shoe-Editor/refs/heads/main/docs/Start_Angle.png",
                 "title": "Start Point",
                 "type": "image"

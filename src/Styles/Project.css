@@ -62,7 +62,11 @@
             scroll-snap-align: center;
         }
 
-        >img {
+        >img,
+        >video {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             height: 100%;
             width: 98%;
             padding-left: 1%;

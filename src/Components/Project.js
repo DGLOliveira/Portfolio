@@ -49,9 +49,9 @@ export default function Projects({ project, projectIndex }) {
     }
 
     //Updates current slide index when the slide container is scrolled
-    const handleScrolling = (e)=>{
+    const handleScrolling = (e) => {
         const scrollPercentage = e.target.scrollLeft / e.target.scrollWidth;
-        setSlide(Math.round(scrollPercentage*totalSlides))
+        setSlide(Math.round(scrollPercentage * totalSlides))
     }
 
     //Corrects the scroll to the current slide when the window is resized
@@ -73,14 +73,27 @@ export default function Projects({ project, projectIndex }) {
                 <h2 className="projectName">{project.name}</h2>
                 <div>
                     <div className="projectSlides">
-                        <div ref={slideContainer} className="projectSlideContainer" onClick={() => handleMaximizeCarousel()} onScroll={(e)=>{handleScrolling(e)}}>
+                        <div ref={slideContainer} className="projectSlideContainer" onClick={() => handleMaximizeCarousel()} onScroll={(e) => { handleScrolling(e) }}>
                             {project.slides.map((slide, index) => {
                                 return (
-                                    <img
-                                        key={index}
-                                        src={slide.url}
-                                        alt={slide.title}
-                                    />
+                                    <>
+                                        {slide.type === "image" && <img
+                                            key={index}
+                                            src={slide.url}
+                                            alt={slide.title}
+                                        />}
+                                        {slide.type.slice(0, 5) === "video" && <video
+                                            controls
+                                            muted
+                                            key={index}
+                                            src={slide.url}
+                                            alt={slide.title}
+                                            type={slide.type}
+                                            poster={slide.cover}
+                                        >
+                                            Your browser does not support the video tag.
+                                        </video>}
+                                    </>
                                 )
                             })}
                         </div>

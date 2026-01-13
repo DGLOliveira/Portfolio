@@ -29,11 +29,11 @@ export default function MaximizedCarousel() {
             handleSlideInput: () => { }
         })
     }
-    
+
     //Updates current slide index when the slide container is scrolled
-    const handleScrolling = (e)=>{
+    const handleScrolling = (e) => {
         const scrollPercentage = e.target.scrollLeft / e.target.scrollWidth;
-        setCurrSlide(Math.round(scrollPercentage*totalSlides))
+        setCurrSlide(Math.round(scrollPercentage * totalSlides))
     }
 
     //Corrects the scroll to the current slide when the window is resized
@@ -58,11 +58,24 @@ export default function MaximizedCarousel() {
                 <div ref={maxSlideContainer} id="MaxSlideContainer" onScroll={(e) => handleScrolling(e)}>
                     {slides.map((slide, index) => {
                         return (
-                            <img
-                                key={index}
-                                src={slide.url}
-                                alt={slide.title}
-                            />
+                            <>
+                                {slide.type === "image" && <img
+                                    key={index}
+                                    src={slide.url}
+                                    alt={slide.title}
+                                />}
+                                {slide.type.slice(0, 5) === "video" && <video
+                                    controls
+                                    muted
+                                    key={index}
+                                    src={slide.url}
+                                    alt={slide.title}
+                                    poster={slide.cover}
+                                    type={slide.type}
+                                >
+                                    Your browser does not support the video tag.
+                                </video>}
+                            </>
                         )
                     })}
                 </div>
