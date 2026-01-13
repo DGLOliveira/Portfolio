@@ -195,7 +195,7 @@
 @media screen and (max-width: 600px) {
 
     .project>div {
-        height: 90vh;
+        height: 85%;
 
         >div {
             height: 100%;
