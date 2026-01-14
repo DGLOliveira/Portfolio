@@ -71,6 +71,12 @@
         "name": "3D Print Shop",
         "slides": [
             {
+                "url":"https://github.com/DGLOliveira/3D-Print-Shop/raw/refs/heads/main/docs/3D_Shop_Demo_Video.mp4",
+                "cover":"https://raw.githubusercontent.com/DGLOliveira/3D-Print-Shop/refs/heads/main/docs/3D_Shop_Demo_Video-Cover.jpg",
+                "title": "Video Demo",
+                "type": "video/mp4"
+            },
+            {
                 "url": "https://raw.githubusercontent.com/DGLOliveira/3D-Print-Shop/refs/heads/main/docs/Home_Light.jpg",
                 "title": "Home Page Light Theme",
                 "type": "image"
