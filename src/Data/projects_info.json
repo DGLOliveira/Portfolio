@@ -3,6 +3,12 @@
         "name": "Virtual Desktop",
         "slides": [
             {
+                "url":"https://github.com/DGLOliveira/Virtual-Desktop/raw/refs/heads/main/docs/Virtual_Desktop_Demo_3.mp4",
+                "cover":"",
+                "title": "Video Demo",
+                "type": "video/mp4"
+            },
+            {
                 "url": "https://raw.githubusercontent.com/DGLOliveira/Virtual-Desktop/refs/heads/main/docs/Virtual_Desktop_Portfolio_Preview_2.png",
                 "title": "Preview",
                 "type": "image"
