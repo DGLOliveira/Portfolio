@@ -143,6 +143,18 @@
         padding-left: 10px;
         padding-right: 10px;
 
+        >h3 {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            margin-bottom: 10px;
+            text-align: left;
+            font-weight: bold;
+            font-size: 22px;
+            color: var(--currentSecondaryFontColor);
+            transition: var(--themeTransition);
+            border-bottom: var(--defaultBorder);
+        }
         >p {
             margin: 0;
             padding: 0;
@@ -150,7 +162,7 @@
             margin-bottom: 10px;
             text-align: left;
             font-weight: normal;
-            font-size: 14px;
+            font-size: 16px;
             color: var(--currentSecondaryFontColor);
             transition: var(--themeTransition);
         }
@@ -235,8 +247,11 @@
         margin-right: 1%;
         box-sizing: border-box;
 
+        >h3 {
+            font-size: 5vw !important;
+        }
         >p {
-            font-size: 3vw !important;
+            font-size: 3.5vw !important;
         }
     }
 

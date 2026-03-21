@@ -39,9 +39,10 @@ export default function About() {
         ["Cura", Cura, "Cura"]
     ];
 
-    const aboutText = ["I’m a passionate, self taught, web developer with a focus in front-end and 3D technologies.",
-        "I've started this journey in order to solve my own personal problems and desires, and eventually grew to love coding as more than just a tool or formula, but as an art form. I'm excited by the challenge of tackling complex problems and creating unique and versatile solutions, with a touch of style.",
-        "I'm currently looking for work as a web developer, and I'm open to remote work."
+    const aboutText = [
+        "I'm a Self-taught web developer specializing in front-end and 3D technologies.",
+        "Passionate about building interactive, visually engaging experiences and solving complex problems with creative solutions.",
+        "Open to remote opportunities."
     ];
 
 

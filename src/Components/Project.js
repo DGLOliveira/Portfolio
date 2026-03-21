@@ -106,6 +106,7 @@ export default function Projects({ project, projectIndex }) {
                     <div>
                         <div className="projectDescription">
                             {project.description.map((paragraph, index) => {
+                                if(index===0) return <h3 key={index}>{paragraph}</h3>
                                 return (
                                     <p key={index}>{paragraph}</p>
                                 )
